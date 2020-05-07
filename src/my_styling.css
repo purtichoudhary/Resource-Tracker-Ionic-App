@@ -1,0 +1,12 @@
+ion-title {
+    font-family: 'Satisfy', cursive;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.my-custom-modal-css .modal-wrapper {
+    height: 75%;
+    top: 20%;
+    position: absolute; 
+    display: block;  
+ }
