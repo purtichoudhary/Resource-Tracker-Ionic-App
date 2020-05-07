@@ -1,0 +1,56 @@
+<ion-grid>
+  <ion-row>
+    <ion-header>
+      <ion-toolbar class="toolbar_div">
+        <ion-title class="toolbar-title">
+          Resource Tracker
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </ion-row>
+
+  <ion-row class="button-row">
+    <ion-button shape="round" (click)="createModal()">+ Add Resource</ion-button>
+  </ion-row>
+
+  <ion-row *ngIf="checkResource()">
+    <div id="container">
+      <strong>No resource available.</strong>
+      <p>Please add one.</p>
+    </div>
+  </ion-row>
+
+  <ion-row wrap *ngIf="!checkResource()">
+    <ion-col class="keyword-col" width-50 *ngFor="let key of keywords">
+        <ion-card class="col-card" (click)="getResources(key)" [ngStyle]="{'background':getColor(key)}">
+          <p > <strong> {{ key }} </strong> </p>
+        </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<!-- <ion-content>
+  <ion-card class="upper-card">
+    
+    
+  </ion-card>
+  
+
+  <ion-card class="lower-card" *ngIf="checkResource()">
+    <div id="container">
+      <strong>No resource available.</strong>
+      <p>Please add one.</p>
+    </div>
+  </ion-card>
+</ion-content>
+
+<ion-card *ngIf="!checkResource()">
+  <ion-chip>
+    <ion-label color="secondary" *ngFor="let key of keywords">{{ key }}</ion-label>
+  </ion-chip>
+  <ion-list>
+    <ion-item *ngFor="let key of keywords">{{key}}></ion-item>
+  </ion-list>
+</ion-card>
+   -->
+  

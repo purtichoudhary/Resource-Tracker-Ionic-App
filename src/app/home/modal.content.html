@@ -1,0 +1,35 @@
+<ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Resource Details</ion-title>
+      <ion-icon name="close-circle-outline" size="large" slot="end" (click)="dismissModal()"></ion-icon>
+
+      <!-- <ion-button class="round" slot="end" shape="round" (click)="dismissModal()">
+          <strong>X</strong>
+      </ion-button> -->
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+      <ion-list>
+          <ion-item>
+            <ion-label class="text" position="stacked">Resource Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" id="Name" [(ngModel)]="title"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="text" position="stacked">Resource Link <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" id="Link" [(ngModel)]="url"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="text" position="stacked">Keyword <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" id="Keyword" [(ngModel)]="keyword"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label class="text" position="stacked">Progress (%) <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" id="Complete" [(ngModel)]="progress"></ion-input>
+          </ion-item>
+      </ion-list> 
+
+    <ion-button id="submit" (click)="addEnteries()" [disabled]="isDisabled()">SUBMIT</ion-button>
+    
+      
+  </ion-content>
